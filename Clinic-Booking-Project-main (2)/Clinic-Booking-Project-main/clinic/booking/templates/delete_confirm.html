@@ -1,0 +1,16 @@
+<!-- templates/delete_confirm.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Appointment</title>
+</head>
+<body>
+    <h1>Delete Appointment</h1>
+    <p>Are you sure you want to delete the appointment for {{ appointment.service }} on {{ appointment.day }} at {{ appointment.time }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+        <a href="{% url 'userPanel' %}">Cancel</a>
+    </form>
+</body>
+</html>
